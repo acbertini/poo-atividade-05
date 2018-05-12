@@ -1,0 +1,6 @@
+<%@ page pageEncoding="UTF-8" %>
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">QuizZzZz <sup> TM</sup> - All rights reserved.</span>
+    </div>
+</footer>
