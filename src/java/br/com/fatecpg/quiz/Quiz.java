@@ -19,13 +19,13 @@ public class Quiz {
     private Date dataRealizacao;
     private double pontuacao;
     private static Questao[] questoes = new Questao[]{
-        new Questao("pergunta 1", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 2", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 3", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 4", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 5", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 6", "resposta", new String[]{"1", "2", "3", "4"}),
-        new Questao("pergunta 7", "resposta", new String[]{"1", "2", "3", "4"}),
+        new Questao("pergunta 1", "11", new String[]{"11", "12", "13", "14"}),
+        new Questao("pergunta 2", "22", new String[]{"21", "22", "23", "24"}),
+        new Questao("pergunta 3", "33", new String[]{"31", "32", "33", "34"}),
+        new Questao("pergunta 4", "44", new String[]{"41", "42", "43", "44"}),
+        new Questao("pergunta 5", "51", new String[]{"51", "52", "53", "54"}),
+        new Questao("pergunta 6", "62", new String[]{"61", "62", "63", "64"}),
+        new Questao("pergunta 7", "resposta", new String[]{"71", "72", "73", "74"}),
         new Questao("pergunta 8", "resposta", new String[]{"1", "2", "3", "4"}),
         new Questao("pergunta 9", "resposta", new String[]{"1", "2", "3", "4"}),
         new Questao("pergunta 10", "resposta", new String[]{"1", "2", "3", "4"}),
@@ -42,6 +42,11 @@ public class Quiz {
             } while (test.contains(questoes[rand]));
             test.add(questoes[rand]);
         }
+    }
+    
+    public Questao getQuestao(int i){
+        Questao q = test.get(i);
+        return q;
     }
 
     public Usuario getUser() {

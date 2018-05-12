@@ -5,22 +5,14 @@ package br.com.fatecpg.quiz;
  * @author AnaBertini
  */
 public class Questao {
-    private String questao;
     private String pergunta;
+    private String resposta;
     private String[] alternativas;
 
-    public Questao(String questao, String pergunta, String[] alternativas) {
-        this.questao = questao;
+    public Questao(String pergunta, String resposta, String[] alternativas) {
         this.pergunta = pergunta;
+        this.resposta = resposta;
         this.alternativas = alternativas;
-    }
-
-    public String getQuestao() {
-        return questao;
-    }
-
-    public void setQuestao(String questao) {
-        this.questao = questao;
     }
 
     public String getPergunta() {
@@ -31,13 +23,20 @@ public class Questao {
         this.pergunta = pergunta;
     }
 
+    public String getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
     public String[] getAlternativas() {
         return alternativas;
     }
 
     public void setAlternativas(String[] alternativas) {
         this.alternativas = alternativas;
-    }
-    
+    }    
     
 }
