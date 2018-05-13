@@ -11,7 +11,8 @@ public class Usuario {
     public static ArrayList<Usuario> lista = new ArrayList<>();
     private String nome;
     private final ArrayList<Quiz> testesFinalizados;
-
+ 
+    
     public Usuario(String nome) {
         this.nome = nome;
         this.testesFinalizados = new ArrayList<>();
@@ -39,6 +40,6 @@ public class Usuario {
             sum += q.getPontuacao();
         }
         return sum / (double) testesFinalizados.size();
-    }
-
+    } 
+    
 }

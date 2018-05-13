@@ -13,12 +13,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Quiz!</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!-- Fixa o rodapé -->
-        <link href="scr/css/sticky-footer-navbar.css" rel="stylesheet">
+        <title>Quiz</title>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>   
+        <script src='js/jquery.min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
+        <script src='js/scripts.js'></script>
+        <link href='src/css/bootstrap.css' rel='stylesheet'>
     </head>
     <body>
+<<<<<<< HEAD
         <!-- Barra de navegação -->
         <div class="row">
             <div class="col-md-12">
@@ -81,5 +84,30 @@
                 </form>
             </div>
         </div>
+=======
+        <br>
+    <center>
+        <h2>Quiz</h2>
+        
+        <br>
+        <form action = "home.jsp">
+            <%  Usuario usuario = new Usuario("Nome usuário");
+                Quiz quiz = new Quiz(usuario);
+                for (int i = 0; i < 5; i++) {
+                    Questao q = quiz.getQuestao(i);
+            %>
+            <h4><%=q.getPergunta()%></h4>
+            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[0]%>"/><%=q.getAlternativas()[0]%>
+            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[1]%>"/><%=q.getAlternativas()[1]%>
+            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[2]%>"/><%=q.getAlternativas()[2]%>
+            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[3]%>"/><%=q.getAlternativas()[3]%>
+            <%}%>
+            <hr/>
+            <input type="submit" name="tested" value="Enviar" />
+        </form>
+    </center>
+>>>>>>> 5c6e369f0d4fd7ae166fc5405f18bf36feb39f50
     </body>
+    <br/><br/><br/><br/><br/>
+    <%@include file="WEB-INF/jspf/footer.jspf" %>
 </html>
