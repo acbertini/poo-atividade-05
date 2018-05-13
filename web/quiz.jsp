@@ -43,20 +43,43 @@
         <!-- Conteúdo da página -->
         <br><br><br>
 
-        <form action = "home.jsp">
-            <%  Usuario usuario = new Usuario("Nome usuário");
-                Quiz quiz = new Quiz(usuario);
-                for (int i = 0; i < 5; i++) {
-                    Questao q = quiz.getQuestao(i);
-            %>
-            <h4><%=q.getPergunta()%></h4>
-            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[0]%>"/><%=q.getAlternativas()[0]%>
-            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[1]%>"/><%=q.getAlternativas()[1]%>
-            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[2]%>"/><%=q.getAlternativas()[2]%>
-            <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[3]%>"/><%=q.getAlternativas()[3]%>
-            <%}%>
-            <hr/>
-            <input type="submit" name="tested" value="Enviar" />
-        </form>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <form>
+                    <label for="inputNome">Insira seu nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome">
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-8">
+                <form action = "home.jsp">
+                    <%  String nome = request.getParameter("nome");
+                        Usuario usuario = new Usuario(nome);
+                        Quiz quiz = new Quiz(usuario);
+                        double acertos = 0;
+                        double pontuacao = 0;
+                        for (int i = 0; i < 5; i++) {
+                            Questao q = quiz.getQuestao(i);
+                    %>
+                    <h4><%=q.getPergunta()%></h4>
+                    <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[0]%>"/><%=q.getAlternativas()[0]%>
+                    <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[1]%>"/><%=q.getAlternativas()[1]%>
+                    <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[2]%>"/><%=q.getAlternativas()[2]%>
+                    <input type="radio" name="<%=q.getPergunta()%>" value="<%=q.getAlternativas()[3]%>"/><%=q.getAlternativas()[3]%>
+
+                    <%  String resposta = request.getParameter(q.getAlternativas().toString());
+                            if (q.getResposta() == resposta) {
+                                acertos++;
+                            }
+                            pontuacao = acertos / 5;
+                        }%>
+                    <hr/>
+                    <input type="submit" name="teste" value="Enviar" />
+                    <% quiz.finalizaTeste(pontuacao);%>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
