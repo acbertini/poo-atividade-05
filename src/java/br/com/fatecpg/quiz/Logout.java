@@ -25,25 +25,21 @@ public class Logout extends HttpServlet {
     @Override
      protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                response.setContentType("text/html");
-                PrintWriter out = response.getWriter();
-                if(request.getParameter("sair")!= null)
-                {
+                
+                    response.setContentType("text/html");
                     HttpSession session = request.getSession(false);
-                   
+                    
                     //enviando para a tela de login
-                    out.println("<script>alert('Teste')</script>");
                     response.sendRedirect("login.jsp");
 
                     //Removendo "user"
                     session.removeAttribute("user");
+                    
                     session.invalidate();
+                    
                     
                 }
                
        
         }
 
-   
-   
-}
