@@ -13,36 +13,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Quiz!</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!-- Fixa o rodapé -->
-        <link href="scr/css/sticky-footer-navbar.css" rel="stylesheet">
+        <title>Quiz</title>
+        <%@include file="WEB-INF/jspf/menu.jspf" %>   
+        <script src='js/jquery.min.js'></script>
+        <script src='js/bootstrap.min.js'></script>
+        <script src='js/scripts.js'></script>
+        <link href='src/css/bootstrap.css' rel='stylesheet'>
     </head>
     <body>
-        <!-- Barra de navegação -->
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand navbar-dark fixed-top bg-primary">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.jsp">Home</a>
-                            </li> 
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="sobre.jsp">Sobre</a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Conteúdo da página -->
-        <br><br><br>
-
+        <br>
+    <center>
+        <h2>Quiz</h2>
+        
+        <br>
         <form action = "home.jsp">
             <%  Usuario usuario = new Usuario("Nome usuário");
                 Quiz quiz = new Quiz(usuario);
@@ -58,5 +41,8 @@
             <hr/>
             <input type="submit" name="tested" value="Enviar" />
         </form>
+    </center>
     </body>
+    <br/><br/><br/><br/><br/>
+    <%@include file="WEB-INF/jspf/footer.jspf" %>
 </html>

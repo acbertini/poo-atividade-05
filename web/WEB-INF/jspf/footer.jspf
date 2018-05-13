@@ -1,6 +1,10 @@
-<%@ page pageEncoding="UTF-8" %>
-<footer class="footer">
-    <div class="container">
+<script src="src/js/jquery.min.js"></script>
+<script src="src/js/bootstrap.min.js"></script>
+<script src="src/js/scripts.js"></script>
+<link href="src/css/bootstrap.css"  rel='stylesheet'>
+    	 
+<footer>
+    <center>
         <span class="text-muted">QuizZzZz <sup> TM</sup> - All rights reserved.</span>
-    </div>
+    </center>
 </footer>
