@@ -2,6 +2,7 @@
 <script src='js/bootstrap.min.js'></script>
 <script src='js/scripts.js'></script>
 <link href='src/css/bootstrap.css' rel='stylesheet'>
+<%@page import="br.com.fatecpg.quiz.Logout" %>
      
 
                     <nav class="nav nav-tabs nav-justified">
@@ -14,7 +15,14 @@
                           <li><a href="home.jsp"> <p style="color:  black; font-size: 15px">Home</p> </a></li>
                           <li><a href="quiz.jsp"> <p style="color:  black; font-size: 15px">Quiz</p> </a></li>
                           <li><a href="sobre.jsp"><p style="color:  black; font-size: 15px">Sobre</p></a></li>
+                          <li role="separator" class="divider"></li>
+                          
                         </ul>
+                          <form action="Logout" method="post" class="navbar-form navbar-right">
+                             <%if(!(session.getAttribute("user")==null)){%>
+                                <button type="submit" value="sair" class="btn btn-danger btn-sm">SAIR</button>
+                             <%}%> 
+                          </form>
                             
                       </div>
                     </nav>

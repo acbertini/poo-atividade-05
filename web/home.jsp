@@ -25,6 +25,7 @@
                         <br><br><br>
                        <!-- <h2><a href="quiz.jsp">Realizar QUIZ</a></h2>-->
         
+                       Seja bem vindo <%=session.getAttribute("user")%> !
                       <a href="quiz.jsp"><button class="btn btn-info btn-lg">Realizar Quiz</button></a>
                       <br/>
                     

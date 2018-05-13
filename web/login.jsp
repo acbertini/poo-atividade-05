@@ -4,7 +4,7 @@
     Author     : Janaina
 --%>
 
-<%@page import="br.com.fatecpg.quiz.Usuario"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -52,19 +52,9 @@
     </head>
     <body>
         <br/>  <br/>  <br/>
-        <%
-          if(request.getParameter("entrar")!= null)
-          {
-              String login = request.getParameter("login");                    
-              HttpSession sessao =  request.getSession(true);
-              sessao.setAttribute("login", login);
-              response.sendRedirect("quiz.jsp");
-          }
-        %>
-        
         <div>  
             <center>
-                <form>
+                <form action="Login" method="post">
                     Login: <input type="text" name="login" />
                     <input type="submit" name="entrar" value="Entrar"/>
                     
