@@ -4,6 +4,7 @@
     Author     : AnaBertini
 --%>
 
+<%@page import="br.com.fatecpg.quiz.Usuario"%>
 <%@page import="br.com.fatecpg.quiz.Quiz"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,13 +44,14 @@
                                         <th>Pontuacao</th>
                                     </tr>
                                     <%  if (!Quiz.topDez.isEmpty()) {
-                                            for (int i = 0; i < Quiz.topDez.size(); i++) {%>
+                                            for (int i = 0; i < Quiz.topDez.size(); i++) {
+                                    %>
                                     <tr>
                                         <td><%=i%></td>
                                         <td><%=Quiz.topDez.get(i).getUser()%></td> 
                                         <td><%=Quiz.topDez.get(i).getPontuacao()%></td>
                                     </tr>
-                                    <%}
+                                    <%    }
                                         }%>
                                 </table> 
                             </div>
@@ -64,9 +66,11 @@
                                         <th>Pontuacao</th>
                                     </tr>
                                     <%  if (!Quiz.ultimosDez.isEmpty()) {
-                                            for (int i = 0; i < Quiz.topDez.size(); i++) {%>
+                                            for (int i = 0; i < Quiz.topDez.size(); i++) {
+                                                Usuario user = Quiz.topDez.get(i).getUser();
+                                    %>
                                     <tr>
-                                        <td><%=Quiz.topDez.get(i).getUser()%></td> 
+                                        <td><%=user.getNome()%></td> 
                                         <td><%=Quiz.topDez.get(i).getPontuacao()%></td>
                                     </tr>
                                     <%}
