@@ -20,49 +20,19 @@
         <script src='js/scripts.js'></script>
         <link href='src/css/bootstrap.css' rel='stylesheet'>
     </head>
-    
-    <body>
-        <!-- Barra de navegação -->
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand navbar-dark fixed-top bg-primary">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="home.jsp">Home</a>
-                            </li> 
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="sobre.jsp">Sobre</a>
-                            </li> 
-                        </ul>
-                    </div>
-                    <a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a>
-                </nav>
-            </div>
-        </div>
 
+    <body>
         <!-- Conteúdo da página -->
         <br><br><br>
-
-        <div class="row">
-            <div class="form-group col-md-4">
-                <form>
-                    <label for="inputNome">Insira seu nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome">
-                </form>
-            </div>
-        </div>
-
         <div class="row">
             <div class="form-group col-md-8">
                 <form action = "home.jsp">
-                    <%  String nome = request.getParameter("nome");
-                        Usuario usuario = new Usuario(nome);
+                    <%  
+                        Usuario usuario = new Usuario("nome");
                         Quiz quiz = new Quiz(usuario);
-                        double acertos = 0;
-                        double pontuacao = 0;
+                        usuario.getTestesFinalizados().add(quiz);
+                        double acertos = 0d;
+                        double pontuacao = 0d;
                         for (int i = 0; i < 5; i++) {
                             Questao q = quiz.getQuestao(i);
                     %>
