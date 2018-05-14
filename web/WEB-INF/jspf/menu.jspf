@@ -15,12 +15,12 @@
             <!--<li><a href="home.jsp"> <p style="color:  black; font-size: 15px">Home</p> </a></li>
             <li><a href="quiz.jsp"> <p style="color:  black; font-size: 15px">Quiz</p> </a></li>
             <li><a href="sobre.jsp"><p style="color:  black; font-size: 15px">Sobre</p></a></li>
-                <%if (session.getAttribute("user") == null) {%>
+                if (session.getAttribute("user") == null) {%>
             <li><a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a></li>
             <li role="separator" class="divider"></li>
         </ul>
     </div>-->
-    <%} else {%>
+     
     <!--<form action="Logout" method="post" class="form-inline my-2 my-lg-0">
         <button type="submit" value="sair" class="btn btn-danger btn-sm">Logout</button>
     </form>-->
@@ -28,7 +28,7 @@
     <form action="Logout" method="post">
         <button type="submit" value="sair" class="btn btn-danger btn-sm">Logout</button>
     </form>
-    <%}%>
+    
 </nav>-->
 
 
@@ -53,10 +53,10 @@
     <form class="form-inline my-2 my-lg-0">
       <a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a>
     </form>
-    <%} else {%>
-    <form action="Logout" method="post">
-        <a href="login.jsp" class="btn btn-info navbar-right" role="button">Logout</a>
-    </form>
+    <%} else if(!(session.getAttribute("user")== null)) {%>
+        <form action="Logout" method="post">
+       <input type="submit" value="Logout" class="btn btn-danger btn-group-md btn-md"></input>
     <%}%>
+    </form>
   </div>
 </nav>
