@@ -24,16 +24,22 @@
             <div class="row">
                 <div class="col-md-8">
                     <br>
-                    <!-- <h2><a href="quiz.jsp">Realizar QUIZ</a></h2>-->
-                    <a href="quiz.jsp"><button class="btn btn-info btn-lg">Realizar Quiz</button></a>
-                    <br/>
+                    
+                    <%if ((session.getAttribute("user")) == null || (session.getAttribute("user")) == "" ) {%>
+                        
+                        <h3>Necessário realizar login!</h3>
+                    
+                    <%}else{%>
+                         <a href="quiz.jsp"><button class="btn btn-info btn-lg">Realizar Quiz</button></a>
+                                <br/><br/>                 
+                    <%}%>
 
                 </div>
                 <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12">
                             <br><br><br>
-                            <h5>Top 10</h5>
+                            <h5><b>Top 10</b></h5>
                             <table style="width:100%">
                                 <tr>
                                     <th>Ranking</th>
@@ -57,7 +63,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <br>
-                            <h5>Ultimos 10</h5>
+                            <h5><b>Ultimos 10</b></h5>
                             <table style="width:100%">
                                 <tr>
                                     <th>Usuario</th> 

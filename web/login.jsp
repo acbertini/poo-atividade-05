@@ -22,12 +22,16 @@
         <br/>  <br/>  <br/>
         <div>  
             <center>
+                <h3>Quiz</h3>
+                <br/>
                 <form action="Login" method="post">
-                    Login: <input type="text" name="login" />
+                    Login: <input type="text" name="login" required />
                     <input type="submit" name="entrar" value="Entrar"/>
                     
                      <!-- <button class="btn btn-info btn-sm" type="submit" name="entrar">Entrar</button>-->
                  </form>
+                
+                 
             <center>
         </div>
     </body>

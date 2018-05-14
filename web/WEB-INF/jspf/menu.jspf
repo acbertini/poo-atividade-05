@@ -49,13 +49,13 @@
         <a class="nav-link" href="sobre.jsp">Sobre</a>
       </li>
     </ul>
-    <%if (session.getAttribute("user") == null) {%>
+    <%if (session.getAttribute("user") == null || session.getAttribute("user") == "") {%>
     <form class="form-inline my-2 my-lg-0">
       <a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a>
     </form>
     <%} else if(!(session.getAttribute("user")== null)) {%>
         <form action="Logout" method="post">
-       <input type="submit" value="Logout" class="btn btn-danger btn-group-md btn-md"></input>
+        <button type="submit" value="sair" class="btn btn-danger btn-sm">Logout</button>
     <%}%>
     </form>
   </div>
