@@ -1,9 +1,10 @@
 <script src='../../js/jquery.min.js'></script>
 <script src='../../js/bootstrap.min.js'></script>
 <script src='../../js/scripts.js'></script>
-<link href='../../src/css/bootstrap.css' rel='stylesheet'/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <%@page import="br.com.fatecpg.quiz.Logout" %>
 
+<!--
 <nav class="nav nav-tabs nav-justified fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -11,24 +12,51 @@
         </div>
         <ul class="nav navbar-nav">
             <!--<li class="active">  <a href="home.jsp">Página Inicial</a></li> -->
-            <li><a href="home.jsp"> <p style="color:  black; font-size: 15px">Home</p> </a></li>
+            <!--<li><a href="home.jsp"> <p style="color:  black; font-size: 15px">Home</p> </a></li>
             <li><a href="quiz.jsp"> <p style="color:  black; font-size: 15px">Quiz</p> </a></li>
             <li><a href="sobre.jsp"><p style="color:  black; font-size: 15px">Sobre</p></a></li>
                 <%if (session.getAttribute("user") == null) {%>
             <li><a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a></li>
             <li role="separator" class="divider"></li>
         </ul>
-    </div>
+    </div>-->
     <%} else {%>
-    <form action="Logout" method="post" class="form-inline my-2 my-lg-0">
+    <!--<form action="Logout" method="post" class="form-inline my-2 my-lg-0">
         <button type="submit" value="sair" class="btn btn-danger btn-sm">Logout</button>
-    </form>
-
+    </form>-->
     <!--
     <form action="Logout" method="post">
         <button type="submit" value="sair" class="btn btn-danger btn-sm">Logout</button>
     </form>
-    -->
-
     <%}%>
+</nav>-->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="home.jsp">QUIZ</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <%if (session.getAttribute("user") != null) {%>
+      <li class="nav-item active">
+        <a class="nav-link">Bem vindo(a) <%=session.getAttribute("user")%></a>
+      </li>
+      <%}%>
+      <li class="nav-item">
+        <a class="nav-link" href="sobre.jsp">Sobre</a>
+      </li>
+    </ul>
+    <%if (session.getAttribute("user") == null) {%>
+    <form class="form-inline my-2 my-lg-0">
+      <a href="login.jsp" class="btn btn-info navbar-right" role="button">Sign in</a>
+    </form>
+    <%} else {%>
+    <form action="Logout" method="post">
+        <a href="login.jsp" class="btn btn-info navbar-right" role="button">Logout</a>
+    </form>
+    <%}%>
+  </div>
 </nav>
